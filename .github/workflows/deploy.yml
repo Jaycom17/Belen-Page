@@ -38,20 +38,21 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      # Deploy: syncs ./dist/ al FTP de Hostinger (FTPS puerto 21.
-      # Si tu hosting rechaza FTPS, cambia protocol a ftp).
-      # server-dir usa la variable FTP_SERVER_DIR (por defecto la raíz del FTP, que
-      # Hostinger mapea a /public_html). Si tu cuenta FTP aterriza en un home que
-      # contiene public_html como carpeta, crea la variable con valor ./public_html/.
-      # Si quieres que borre remoto lo que no existe localmente (deploy limpio),
-      # agrega:  dangerous-clean-src: true
-      - name: Deploy via FTPS a Hostinger
+      # Deploy: syncs ./dist/ al FTP de Hostinger (puerto 21).
+      # Si Hostinger soporta FTPS y quieres cifrar la conexión, cambia
+      # protocol: ftp -> ftps.
+      # server-dir: la cuenta FTP de Hostinger aterriza en public_html,
+      # así que ./ sube directo a la raíz del sitio. Si tu cuenta FTP
+      # aterriza en el home que contiene public_html como carpeta,
+      # usa la variable de entorno FTP_SERVER_DIR con valor ./public_html/.
+      - name: Deploy via FTP a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
+          port: 21
           server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
           local-dir: ./dist/
           exclude: |
