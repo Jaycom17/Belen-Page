@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mediumblue-chimpanzee-615279.hostingersite.com/sitemap.xml

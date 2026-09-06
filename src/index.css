@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sora: 'Sora', sans-serif;
+  --font-karla: 'Karla', sans-serif;
+
+  --color-moss-deep: #1E3024;
+  --color-moss-primary: #2E4A34;
+  --color-moss-soft: #4A6B4F;
+  --color-moss-light: #DCE6DD;
+  --color-ochre-accent: #A66A1E;
+  --color-ochre-dark: #8A5518;
+  --color-ochre-light: #D69A4C;
+  --color-ochre-bg: #F3E1C6;
+  --color-base-cream: #F5F1E6;
+  --color-surface-paper: #FBF9F3;
+  --color-surface: #FCF9EE;
+  --color-surface-container: #F1EEE3;
+  --color-surface-container-high: #EBE8DD;
+  --color-surface-container-highest: #E5E3D8;
+  --color-surface-variant: #E5E3D8;
+  --color-graphite-text: #26261F;
+  --color-graphite-muted: #57564C;
+  --color-primary: #18331F;
+  --color-secondary: #885201;
+
+  --spacing-space-2xs: 0.25rem;
+  --spacing-space-xs: 0.5rem;
+  --spacing-space-sm: 0.75rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-2xl: 3rem;
+  --spacing-space-3xl: 4rem;
+  --spacing-space-4xl: 6rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-gutter-desktop: 2rem;
+  --spacing-container-max: 75rem;
+}
+
+/* Typography Utility Classes */
+.font-display-hero {
+  font-family: var(--font-sora);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 640px) {
+  .font-display-hero {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.font-headline-lg {
+  font-family: var(--font-sora);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 640px) {
+  .font-headline-lg {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+.font-headline-md {
+  font-family: var(--font-sora);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.font-headline-sm {
+  font-family: var(--font-sora);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.font-title-card {
+  font-family: var(--font-sora);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.font-body-lg {
+  font-family: var(--font-karla);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.font-body-md {
+  font-family: var(--font-karla);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.font-body-medium {
+  font-family: var(--font-karla);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.font-body-sm {
+  font-family: var(--font-karla);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.font-label-md {
+  font-family: var(--font-karla);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.font-label-sm {
+  font-family: var(--font-karla);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.font-caption-technical {
+  font-family: var(--font-karla);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.blueprint-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(46, 74, 52, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 74, 52, 0.08) 1px, transparent 1px);
+}
+
+.blueprint-grid-dark {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(220, 230, 221, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 230, 221, 0.12) 1px, transparent 1px);
+}

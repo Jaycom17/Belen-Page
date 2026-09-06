@@ -1,0 +1,59 @@
+name: Deploy Hostinger (FTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build
+
+      # Deploy: syncs ./dist/ al FTP de Hostinger (FTPS puerto 21.
+      # Si tu hosting rechaza FTPS, cambia protocol a ftp).
+      # server-dir usa la variable FTP_SERVER_DIR (por defecto la raíz del FTP, que
+      # Hostinger mapea a /public_html). Si tu cuenta FTP aterriza en un home que
+      # contiene public_html como carpeta, crea la variable con valor ./public_html/.
+      # Si quieres que borre remoto lo que no existe localmente (deploy limpio),
+      # agrega:  dangerous-clean-src: true
+      - name: Deploy via FTPS a Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
+          local-dir: ./dist/
+          exclude: |
+            **/.DS_Store
+            **/Thumbs.db
