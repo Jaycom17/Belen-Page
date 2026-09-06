@@ -39,8 +39,9 @@ jobs:
         run: pnpm run build
 
       # Deploy: syncs ./dist/ al FTP de Hostinger (puerto 21).
-      # Si Hostinger soporta FTPS y quieres cifrar la conexión, cambia
-      # protocol: ftp -> ftps.
+      # Servidor: IP de FTP dada por Hostinger (verificada accesible en :21).
+      # Si Hostinger te cambia la IP, actualiza este valor.
+      # Si quieres cifrar la conexión, cambia protocol: ftp -> ftps.
       # server-dir: la cuenta FTP de Hostinger aterriza en public_html,
       # así que ./ sube directo a la raíz del sitio. Si tu cuenta FTP
       # aterriza en el home que contiene public_html como carpeta,
@@ -48,7 +49,7 @@ jobs:
       - name: Deploy via FTP a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: 92.112.189.176
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp

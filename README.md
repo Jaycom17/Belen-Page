@@ -17,17 +17,16 @@ pnpm run build    # genera dist/
 
 ## Deploy (CI/CD)
 
-Cada push a `main` construye y despliega automáticamente a Hostinger vía FTPS (`.github/workflows/deploy.yml`).
+Cada push a `main` construye y despliega automáticamente a Hostinger vía FTP (`.github/workflows/deploy.yml`).
 
 Secrets requeridos en **Settings → Secrets and variables → Actions**:
 
 | Nombre | Descripción |
 |--------|-------------|
-| `FTP_SERVER` | Host FTP (ej. `ftp.tudominio.com`) |
-| `FTP_USERNAME` | Usuario FTP |
+| `FTP_USERNAME` | Usuario FTP (ej. `u932474139.seudominio.com`) |
 | `FTP_PASSWORD` | Contraseña FTP |
 
-Variable opcional `FTP_SERVER_DIR` (por defecto la raíz del FTP, que Hostinger mapea a `public_html`).
+La IP del servidor FTP está fijada en el workflow (`server:`); si Hostinger la cambia, edítala ahí. Variable opcional `FTP_SERVER_DIR` (por defecto la raíz del FTP, que Hostinger mapea a `public_html`).
 
 ## SEO
 
