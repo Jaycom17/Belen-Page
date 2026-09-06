@@ -23,10 +23,11 @@ Secrets requeridos en **Settings → Secrets and variables → Actions**:
 
 | Nombre | Descripción |
 |--------|-------------|
+| `FTP_SERVER` | IP del servidor FTP, exacta y **sin `ftp://`** (ej. `92.112.189.176`) |
 | `FTP_USERNAME` | Usuario FTP (ej. `u932474139.seudominio.com`) |
 | `FTP_PASSWORD` | Contraseña FTP |
 
-La IP del servidor FTP está fijada en el workflow (`server:`); si Hostinger la cambia, edítala ahí. Variable opcional `FTP_SERVER_DIR` (por defecto la raíz del FTP, que Hostinger mapea a `public_html`).
+Variable opcional `FTP_SERVER_DIR` (por defecto la raíz del FTP, que Hostinger mapea a `public_html`).
 
 ## SEO
 
