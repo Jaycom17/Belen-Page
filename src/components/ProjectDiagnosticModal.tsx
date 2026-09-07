@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, ArrowRight, RotateCcw, Compass, Sparkles } from 'lucide-react';
+import { X, ArrowRight, RotateCcw, Compass, Sparkles } from 'lucide-react';
 import { SERVICES } from '../data/content';
 
 interface DiagnosticOption {
@@ -32,72 +32,96 @@ export const ProjectDiagnosticModal: React.FC<ProjectDiagnosticModalProps> = ({
 
   const questions: DiagnosticQuestion[] = [
     {
-      title: '¿En qué estado se encuentra tu iniciativa hoy?',
-      subtitle: 'Selecciona la opción que mejor describa tu avance actual:',
+      title: '¿Dónde estás parado con tu idea hoy?',
+      subtitle: 'Elige la opción que mejor te describa. Sin rodeos:',
       options: [
         {
-          label: 'Solo tengo la idea en mente o anotaciones preliminares',
-          hint: 'Necesito validar viabilidad y saber cuál es el primer paso sin perder tiempo.',
+          label: 'Apenas tengo la idea, todo está en mi cabeza',
+          hint: 'Quiero saber por dónde empezar y si de verdad puede funcionar.',
           weight: 'orientacion',
         },
         {
-          label: 'Ya tengo una iniciativa en marcha o avances en mi proyecto',
-          hint: 'Tengo dudas puntuales con los costos, cómo organizar los gastos y el dinero, o cómo sustentar y explicar bien el plan.',
+          label: 'Ya estoy trabajando en algo pero me trabo en partes',
+          hint: 'Tengo dudas puntuales con el dinero, los costos o cómo explicar bien mi proyecto.',
           weight: 'asesoria',
         },
         {
-          label: 'Tengo un documento de proyecto ya redactado por mi equipo',
-          hint: 'Necesito una revisión externa calificada antes de postularlo a convocatorias o fondos.',
+          label: 'Ya tengo todo escrito y me da miedo entregarlo así nomás',
+          hint: 'Quiero que alguien con experiencia le dé una mirada antes de presentarlo.',
           weight: 'revision',
         },
         {
-          label: 'Requiero formular el proyecto técnico completo desde cero',
-          hint: 'Necesito armar el plan de trabajo, cronograma, presupuesto y la propuesta formal lista para presentar.',
-          weight: 'estructuracion',
+          label: 'Necesito armar el proyecto desde cero y que quede bien hecho',
+          hint: 'Quiero un documento formal, ordenado, listo para presentar.',
+          weight: 'formulacion',
         },
       ],
     },
     {
-      title: '¿Cuál es el tipo de colectivo u organización?',
-      subtitle: 'Esto ayuda a determinar el estándar normativo aplicable:',
+      title: '¿Qué estás impulsando exactamente?',
+      subtitle: 'Cuéntanos en cuál de estas casillas encaja mejor:',
       options: [
         {
-          label: 'Emprendimiento o pequeña empresa comercial/productiva',
-          hint: 'Enfoque en modelo financiero, punto de equilibrio y retorno.',
+          label: 'Mi propio negocio o emprendimiento',
+          hint: 'Quiero que sea rentable y que se sostenga en el tiempo.',
         },
         {
-          label: 'Club u organización deportiva',
-          hint: 'Enfoque en desarrollo deportivo, estatutos y comodatos/apoyo institucional.',
+          label: 'Un club o equipo deportivo',
+          hint: 'Quiero darle forma seria al club para crecer y conseguir apoyo.',
         },
         {
-          label: 'Organización social, comunitaria o junta de acción',
-          hint: 'Enfoque en concertación comunitaria, cooperación y beneficio colectivo.',
+          label: 'Algo para mi barrio o comunidad',
+          hint: 'Una iniciativa donde participa gente y genera un beneficio colectivo.',
         },
         {
-          label: 'Fundación sin ánimo de lucro o asociación',
-          hint: 'Enfoque en postulación a convocatorias de cooperación nacional o internacional.',
+          label: 'Una fundación o asociación',
+          hint: 'Quiero postular a convocatorias y conseguir financiación.',
+        },
+        {
+          label: 'Mis estudios: tesis, trabajo de grado o temas de clase',
+          hint: 'Necesito apoyo académico para avanzar o comprender mejor.',
         },
       ],
     },
     {
-      title: '¿Cuál es tu plazo y objetivo inmediato prioritario?',
-      subtitle: 'Tu necesidad de tiempo define la intensidad del acompañamiento:',
+      title: '¿Con qué urgencia lo necesitas?',
+      subtitle: 'Nos ayuda a saber qué tan intenso debe ser el acompañamiento:',
       options: [
         {
-          label: 'Quiero tener claridad conceptual y una hoja de ruta esta misma semana',
-          hint: 'Sesión rápida diagnóstica de 45 a 60 minutos.',
+          label: 'Necesito claridad ya, esta semana',
+          hint: 'Quiero una sesión rápida para salir de dudas.',
         },
         {
-          label: 'Resolver un obstáculo financiero o metodológico específico para seguir avanzando',
-          hint: 'Sesión de trabajo profunda de 70 a 90 minutos.',
+          label: 'No hay apuro, pero quiero resolver bien un tema puntual',
+          hint: 'Una sesión más profunda para destrabar ese tema y seguir.',
         },
         {
-          label: 'Tengo fecha límite de convocatoria y necesito revisar técnicamente el proyecto antes de enviar',
-          hint: 'Revisión técnica detallada con reporte de inconsistencias en 2-3 días.',
+          label: 'Tengo una fecha límite encima para entregar',
+          hint: 'Necesito una revisión rápida y completa antes de entregar.',
         },
         {
-          label: 'Construir el proyecto completo con acompañamiento constante en 2 a 3 semanas',
-          hint: 'Estructuración integral con sesiones de co-creación.',
+          label: 'No tengo prisa y quiero hacerlo bien, con calma',
+          hint: 'Un proceso completo, acompañado durante varias semanas.',
+        },
+      ],
+    },
+    {
+      title: '¿Cuál de estas suena más a ti?',
+      subtitle: 'La última pregunta, la más personal:',
+      options: [
+        {
+          label: 'Batallar con materias, exámenes o temas que no entiendo',
+          hint: 'Sesiones para reforzar, aclarar dudas y ganar confianza.',
+          weight: 'refuerzo-academico',
+        },
+        {
+          label: 'Ando de frente con mi tesis o trabajo de grado',
+          hint: 'Ayuda para avanzar seguro: una sesión, un plan de varias o acompañamiento intensivo.',
+          weight: 'trabajos-de-grado',
+        },
+        {
+          label: 'Darle forma a mi emprendimiento, club o proyecto comunitario',
+          hint: 'Orientación, revisión o construcción del proyecto.',
         },
       ],
     },
@@ -118,11 +142,17 @@ export const ProjectDiagnosticModal: React.FC<ProjectDiagnosticModalProps> = ({
     setAnswers([]);
   };
 
-  // Determine recommended service based on Q1
-  const recommendedServiceId =
-    answers.length > 0
-      ? questions[0].options[answers[0]]?.weight || 'orientacion'
-      : 'orientacion';
+  // Determine recommended service based on answers with weights
+  const recommendedServiceId = (() => {
+    for (let i = answers.length - 1; i >= 0; i--) {
+      const q = questions[i];
+      const option = q?.options[answers[i]];
+      if (q && option?.weight) {
+        return option.weight;
+      }
+    }
+    return 'orientacion';
+  })();
 
   const recommendedService =
     SERVICES.find((s) => s.id === recommendedServiceId) || SERVICES[0];
@@ -250,17 +280,12 @@ export const ProjectDiagnosticModal: React.FC<ProjectDiagnosticModalProps> = ({
                 </div>
               </div>
 
-              {/* Deliverables snippet */}
+              {/* Ideal for snippet */}
               <div className="p-2.5 bg-white rounded border border-[#DCE6DD] text-xs">
-                <span className="font-bold text-[#18331F] block mb-1">Qué incluye este servicio:</span>
-                <ul className="space-y-1 text-[11px] text-[#57564C]">
-                  {recommendedService.deliverables.slice(0, 3).map((d, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#2E4A34] shrink-0 mt-0.5" />
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
+                <span className="font-bold text-[#18331F] block mb-1">¿Para quién está diseñado?</span>
+                <p className="text-[11px] text-[#57564C] leading-relaxed">
+                  {recommendedService.idealFor}
+                </p>
               </div>
 
               <p className="font-['Karla'] text-xs text-[#57564C] italic text-center">

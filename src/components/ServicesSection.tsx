@@ -54,7 +54,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 ¿No estás seguro de cuál servicio se adapta mejor a tu etapa?
               </h3>
               <p className="font-['Karla'] text-xs sm:text-[14px] text-[#57564C] max-w-2xl leading-relaxed">
-                Realiza el diagnóstico rápido en 3 preguntas clave y recibe al instante la recomendación técnica que tu proyecto requiere.
+                Realiza el diagnóstico rápido en 4 preguntas y recibe al instante el servicio que mejor se adapta a tu etapa.
               </p>
             </div>
           </div>
@@ -110,13 +110,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               </div>
 
               {/* Card Footer with Price & Action */}
-              <div className="pt-4 mt-5 border-t border-[#DCE6DD]/60 flex items-center justify-between">
-                <div className="flex flex-col">
-                  <span className="font-['Karla'] text-[12px] text-[#57564C] font-medium">
-                    Inversión
-                  </span>
+              <div className="pt-4 mt-5 border-t border-[#DCE6DD]/60 flex items-end justify-between gap-3">
+                <div className="flex flex-col gap-1">
                   <span className="font-['Sora'] text-lg sm:text-xl text-[#A66A1E] font-bold">
                     {service.price}
+                  </span>
+                  <span className="font-['Karla'] text-[10px] text-[#57564C]/80 leading-snug max-w-[15rem]">
+                    Tarifas sujetas a variación según la complejidad, requerimientos del servicio y desplazamiento.
                   </span>
                 </div>
 
@@ -125,7 +125,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     e.stopPropagation();
                     onSelectServiceForBooking(service.id);
                   }}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#2E4A34] hover:bg-[#1E3024] text-[#FBF9F3] font-['Karla'] text-[13px] font-semibold rounded transition-colors cursor-pointer shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#2E4A34] hover:bg-[#1E3024] text-[#FBF9F3] font-['Karla'] text-[13px] font-semibold rounded transition-colors cursor-pointer shadow-sm shrink-0"
                 >
                   <span>{service.ctaText}</span>
                   <ArrowRight className="w-4 h-4" />

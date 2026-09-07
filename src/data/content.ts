@@ -2,85 +2,116 @@ import { ServiceItem, CaseStudyItem, FaqItem } from '../types';
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'orientacion',
-    tag: 'Paso Inicial',
+    id: 'refuerzo-academico',
+    tag: 'Formación Académica',
     tagColor: 'bg-[#DCE6DD] text-[#2E4A34]',
     borderAccentColor: 'border-l-[#2E4A34]',
+    title: 'Refuerzo académico',
+    duration: '1 hora',
+    durationIcon: 'schedule',
+    description: 'Asesorías personalizadas para comprender mejor temas académicos, fortalecer conocimientos y desarrollar herramientas que permitan al estudiante trabajar con mayor autonomía.',
+    price: '$50.000 / hora',
+    priceDetails: [
+      '$50.000 · 1 hora (virtual entre semana)',
+      '$65.000 · 1 hora (virtual fin de semana y festivos)'
+    ],
+    ctaText: 'Agendar sesión',
+    idealFor: 'Estudiantes que necesitan apoyo en temas académicos específicos para mejorar su comprensión y autonomía.',
+    modality: 'Virtual (entre semana) | Sábados, domingos y festivos con tarifa diferencial'
+  },
+  {
+    id: 'trabajos-de-grado',
+    tag: 'Acompañamiento Grado',
+    tagColor: 'bg-[#DCE6DD] text-[#2E4A34]',
+    borderAccentColor: 'border-l-[#4A6B4F]',
+    title: 'Asesoría en trabajos de grado',
+    duration: '1 hora / sesiones',
+    durationIcon: 'schedule',
+    description: 'Acompañamiento metodológico personalizado para estudiantes que desean avanzar con mayor claridad y seguridad en su trabajo de grado. Incluye opciones de asesoría puntual, paquete de acompañamiento y acompañamiento intensivo.',
+    price: 'Desde $55.000 / hora',
+    priceDetails: [
+      'Asesoría puntual: $55.000 · 1 hora (virtual entre semana)',
+      'Asesoría puntual: $70.000 · 1 hora (virtual fin de semana y festivos)',
+      'Paquete de acompañamiento: $200.000 · 4 sesiones de 1 hora (virtual entre semana)',
+      'Paquete de acompañamiento: $260.000 · 4 sesiones de 1 hora (virtual fin de semana)',
+      'Acompañamiento intensivo: $420.000 · 6 sesiones de 1 hora (virtual entre semana)'
+    ],
+    ctaText: 'Solicitar asesoría',
+    idealFor: 'Estudiantes universitarios que requieren orientación metodológica, revisión de avances o preparación para sustentación.',
+    modality: 'Virtual (entre semana y fines de semana)'
+  },
+  {
+    id: 'orientacion',
+    tag: 'Paso Inicial',
+    tagColor: 'bg-[#F3E1C6]/50 text-[#8A5518]',
+    borderAccentColor: 'border-l-[#A66A1E]',
     title: 'Consulta de orientación',
-    duration: '45–60 min',
+    duration: '1 hora',
     durationIcon: 'schedule',
     description: 'Conversación sobre tu idea, identificación de necesidades, orientación inicial, recomendaciones y definición de siguientes pasos. No incluye elaboración del proyecto.',
-    price: '$50.000',
-    ctaText: 'Agendar orientación',
-    deliverables: [
-      'Diagnóstico inicial de viabilidad técnica y normativa',
-      'Mapeo de necesidades prioritarias y requerimientos clave',
-      'Hoja de ruta recomendada con siguientes pasos ejecutables',
-      'Recomendación transparente del servicio o trámite requerido'
+    price: '$50.000 / hora',
+    priceDetails: [
+      '$50.000 · 1 hora (virtual entre semana)',
+      '$65.000 · 1 hora (virtual fin de semana y festivos)'
     ],
+    ctaText: 'Agendar orientación',
     idealFor: 'Personas o equipos con una idea en mente que necesitan saber por dónde empezar y si tiene viabilidad real.',
-    modality: 'Virtual (Google Meet / Zoom) o Presencial concertada'
+    modality: 'Virtual (entre semana) | Fines de semana y festivos con tarifa diferencial'
   },
   {
     id: 'asesoria',
     tag: 'Resolución Puntual',
-    tagColor: 'bg-[#DCE6DD] text-[#2E4A34]',
-    borderAccentColor: 'border-l-[#4A6B4F]',
+    tagColor: 'bg-[#EBE8DD] text-[#26261F]',
+    borderAccentColor: 'border-l-[#26261F]',
     title: 'Asesoría especializada',
-    duration: '70–90 min',
+    duration: '1h 20min',
     durationIcon: 'schedule',
-    description: 'Orientación puntual en formulación, estructuración, planeación, presupuesto, flujo de fondos, análisis de viabilidad o revisión de documentos. Ideal si ya avanzaste en tu proyecto y necesitas resolver una fase específica. También aplica para proyectos de grado, tesis y trabajos universitarios.',
-    price: '$80.000 – $100.000',
-    ctaText: 'Solicitar asesoría',
-    deliverables: [
-      'Resolución técnica profunda de un bloqueo específico',
-      'Revisión o formulación de estructura de costos / flujo de fondos',
-      'Alineación metodológica con términos de referencia específicos',
-      'Memoria de recomendaciones técnicas por escrito post-sesión'
+    description: 'Orientación puntual en formulación, estructuración, planeación, análisis de viabilidad o revisión de documentos. Ideal si ya avanzaste en tu proyecto y necesitas resolver una fase específica.',
+    price: '$80.000 / 1h 20min',
+    priceDetails: [
+      '$80.000 · 1 hora y 20 minutos (virtual entre semana)',
+      '$95.000 · 1 hora y 20 minutos (virtual fin de semana y festivos)'
     ],
-    idealFor: 'Líderes de proyectos en marcha, estudiantes universitarios con proyectos de grado o tesis, que tienen dudas específicas sobre presupuesto, viabilidad financiera o marco lógico.',
-    modality: 'Virtual o Presencial con material de trabajo previo'
+    ctaText: 'Solicitar asesoría',
+    idealFor: 'Personas o equipos que estén diseñando un proyecto y necesitan resolver una fase específica.',
+    modality: 'Virtual (entre semana) | Fines de semana y festivos con tarifa diferencial'
   },
   {
     id: 'revision',
-    tag: 'Revisión Técnica & Ajuste',
+    tag: 'Revisión Técnica',
     tagColor: 'bg-[#F3E1C6]/50 text-[#8A5518]',
     borderAccentColor: 'border-l-[#A66A1E]',
     title: 'Revisión técnica de proyecto',
-    duration: '2–3 horas',
+    duration: '2 horas',
     durationIcon: 'schedule',
-    description: 'Para cuando ya tienes un proyecto formulado y necesitas una revisión externa: observaciones, inconsistencias, recomendaciones, ajustes sugeridos y un concepto general sobre la estructura.',
-    price: '$150.000 – $250.000',
-    ctaText: 'Pedir revisión',
-    deliverables: [
-      'Informe técnico de revisión con matriz de observaciones y hallazgos',
-      'Detección de incongruencias entre objetivos, actividades y presupuesto',
-      'Ajustes sugeridos para postulación a fondos o convocatorias',
-      'Sesión de devolución y retroalimentación de 60 minutos'
+    description: 'Para cuando ya se tiene un proyecto formulado y necesitas una revisión externa: observaciones, recomendaciones, ajustes sugeridos y un concepto general sobre la estructura.',
+    price: '$150.000 / 2 horas',
+    priceDetails: [
+      '$150.000 · 2 horas (virtual entre semana)',
+      '$165.000 · 2 horas (virtual fin de semana y festivos)'
     ],
+    ctaText: 'Pedir revisión',
     idealFor: 'Proyectos ya redactados que van a ser presentados ante entidades públicas, convocatorias de cooperación o inversionistas.',
-    modality: 'Revisión documental asincrónica + Sesión sincrónica de entrega'
+    modality: 'Virtual (entre semana) | Fines de semana y festivos con tarifa diferencial'
   },
   {
-    id: 'estructuracion',
-    tag: 'Construcción Integral',
+    id: 'formulacion',
+    tag: 'Formulación Integral',
     tagColor: 'bg-[#EBE8DD] text-[#26261F]',
-    borderAccentColor: 'border-l-[#26261F]',
-    title: 'Estructuración de proyecto',
-    duration: '2–3 sem + ses. semanal',
+    borderAccentColor: 'border-l-[#2E4A34]',
+    title: 'Formulación de proyecto',
+    duration: '4–6 semanas',
     durationIcon: 'date_range',
-    description: 'Acompañamiento completo para construir tu proyecto desde cero, según tu necesidad. Puede incluir diagnóstico, problema/necesidad, objetivos, alternativas, actividades, presupuesto, costos, ingresos, flujo de fondos y cronograma.',
-    price: '$500.000 – $950.000',
-    ctaText: 'Iniciar estructuración',
-    deliverables: [
-      'Diagnóstico y árbol de problemas / árbol de objetivos',
-      'Matriz de marco lógico completa con indicadores verificables',
-      'Presupuesto desglosado, estructura de costos e ingresos y flujo de fondos',
-      'Cronograma técnico de ejecución física y financiera',
-      'Dossier técnico formal listo para radicación o búsqueda de recursos'
+    description: 'Acompañamiento para la formulación del proyecto desde cero según tu necesidad. Puede incluir diagnóstico, problema/necesidad, objetivos, alternativas, actividades, presupuesto, costos, ingresos, cronograma, entre otros.',
+    price: 'Desde $900.000',
+    priceDetails: [
+      'Desde $900.000 (virtual entre semana)',
+      'Trabajo intensivo de 4 a 6 semanas',
+      '1 sesión conjunta semanal para revisar avances'
     ],
+    ctaText: 'Iniciar formulación',
     idealFor: 'Iniciativas que requieren un documento de proyecto riguroso, formal y con respaldo técnico institucional de alto nivel.',
-    modality: 'Proceso de 2 a 3 semanas con sesiones semanales de co-creación'
+    modality: 'Virtual entre semana con 1 sesión conjunta semanal'
   }
 ];
 

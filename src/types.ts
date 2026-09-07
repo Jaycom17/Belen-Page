@@ -8,8 +8,8 @@ export interface ServiceItem {
   durationIcon: string;
   description: string;
   price: string;
+  priceDetails?: string[];
   ctaText: string;
-  deliverables: string[];
   idealFor: string;
   modality: string;
 }

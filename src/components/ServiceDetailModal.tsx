@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, Calendar, Clock, Sparkles } from 'lucide-react';
+import { X, Calendar, Clock, CircleDollarSign } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 interface ServiceDetailModalProps {
@@ -55,21 +55,26 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           {service.description}
         </p>
 
-        {/* Deliverables Section */}
-        <div className="bg-[#F5F1E6] p-4 rounded border border-[#E5E3D8] mb-5">
-          <h4 className="font-['Sora'] text-xs font-bold text-[#18331F] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#A66A1E]" />
-            Entregables &amp; Alcance Incluido
-          </h4>
-          <ul className="space-y-2">
-            {service.deliverables.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-xs sm:text-sm text-[#26261F]">
-                <CheckCircle2 className="w-4 h-4 text-[#2E4A34] shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Price details */}
+        {service.priceDetails && service.priceDetails.length > 0 && (
+          <div className="bg-[#F5F1E6] p-4 rounded border border-[#E5E3D8] mb-5">
+            <h4 className="font-['Sora'] text-xs font-bold text-[#18331F] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <CircleDollarSign className="w-3.5 h-3.5 text-[#A66A1E]" />
+              Tarifas
+            </h4>
+            <ul className="space-y-2">
+              {service.priceDetails.map((item, index) => (
+                <li key={index} className="flex items-start gap-2 text-xs sm:text-sm text-[#26261F]">
+                  <CircleDollarSign className="w-4 h-4 text-[#2E4A34] shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 pt-2 border-t border-[#E5E3D8] text-[11px] text-[#57564C]">
+              Nota: Tarifas sujetas a variación según la complejidad, requerimientos del servicio y desplazamiento.
+            </p>
+          </div>
+        )}
 
         {/* Ideal for note */}
         <div className="mb-6 p-3 bg-[#FCF9EE] rounded border border-[#DCE6DD] text-xs text-[#57564C]">
