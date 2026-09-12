@@ -14,8 +14,8 @@ export const HowItWorksSection: React.FC = () => {
             ¿Cómo funciona?
           </h2>
           <p className="font-['Karla'] text-[15px] sm:text-base text-[#57564C]">
-            Un método estructurado que elimina la incertidumbre y enfoca los recursos en lo
-            verdaderamente necesario.
+            Un método estructurado para entender dónde estás, definir qué necesitas y avanzar con
+            una ruta clara.
           </p>
         </div>
 
@@ -36,6 +36,33 @@ export const HowItWorksSection: React.FC = () => {
                 <p className="font-['Karla'] text-[14px] text-[#57564C] leading-relaxed">
                   {step.desc}
                 </p>
+
+                {step.includes && (
+                  <div className="mt-3">
+                    <p className="font-['Karla'] text-[12px] font-semibold uppercase tracking-wide text-[#2E4A34] mb-1.5">
+                      Incluye:
+                    </p>
+                    <ul className="flex flex-col gap-1">
+                      {step.includes.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-1.5 font-['Karla'] text-[13px] text-[#57564C]"
+                        >
+                          <span className="material-symbols-outlined text-[14px] text-[#4A6B4F] mt-0.5">
+                            check
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {step.extra && (
+                  <p className="font-['Karla'] text-[14px] text-[#57564C] leading-relaxed mt-2">
+                    {step.extra}
+                  </p>
+                )}
               </div>
 
               <div className="pt-3 mt-4 border-t border-[#4A6B4F]/10 flex items-center gap-1.5 text-[#2E4A34] font-['Karla'] text-[12px] font-semibold">

@@ -118,31 +118,40 @@ export const SERVICES: ServiceItem[] = [
 export const HOW_IT_WORKS_STEPS = [
   {
     step: '01',
-    title: 'Cuéntame tu idea',
-    desc: 'Agendas una consulta de orientación y hablamos de dónde estás y qué necesitas.',
+    title: 'Conocemos tu necesidad',
+    desc: 'Iniciamos con una sesión diagnóstica para comprender tu punto de partida, identificar el reto y establecer qué necesitas realmente.',
+    includes: [
+      'Identificación de necesidades',
+      'Revisión del contexto',
+      'Definición de objetivos',
+      'Priorización de temas'
+    ],
     badgeIcon: 'record_voice_over',
     badgeText: 'Sesión diagnóstica'
   },
   {
     step: '02',
-    title: 'Definimos el camino',
-    desc: 'Según la fase de tu proyecto, te recomiendo el servicio que realmente necesitas, no el más caro.',
+    title: 'Diseñamos tu ruta de trabajo',
+    desc: 'A partir del diagnóstico, definimos una ruta de asesoría personalizada, con objetivos, prioridades y acciones concretas.',
+    extra: 'No aplicamos soluciones genéricas. La asesoría se adapta a la fase y características de tu proceso.',
     badgeIcon: 'alt_route',
     badgeText: 'Ruta personalizada'
   },
   {
     step: '03',
-    title: 'Trabajamos juntos',
-    desc: 'Ya sea una asesoría puntual o una estructuración completa, avanzamos con seguimiento y comunicación constante.',
+    title: 'Avanzamos con acompañamiento',
+    desc: 'Trabajamos sesión a sesión para resolver dudas, fortalecer contenidos, revisar avances y mejorar la estructura de tu proyecto o proceso académico.',
+    extra: 'Recibes orientación técnica, retroalimentación y herramientas para avanzar con mayor autonomía y seguridad.',
     badgeIcon: 'sync',
-    badgeText: 'Acompañamiento activo'
+    badgeText: 'Acompañamiento especializado'
   },
   {
     step: '04',
-    title: 'Te llevas un proyecto listo',
-    desc: 'Con la formulación, presupuesto y estructura que necesitas para presentarlo donde sea.',
+    title: 'Validamos y fortalecemos el resultado',
+    desc: 'Revisamos los avances y verificamos la coherencia, calidad y solidez de lo trabajado antes de dar por finalizado el proceso de asesoría.',
+    extra: 'Te ayudamos a llegar a una versión más clara, estructurada y preparada para el siguiente paso.',
     badgeIcon: 'verified',
-    badgeText: 'Dossier ejecutable'
+    badgeText: 'Revisión y retroalimentación final'
   }
 ];
 
